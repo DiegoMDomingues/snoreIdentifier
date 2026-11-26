@@ -1,0 +1,21 @@
+# Ambiente de referência: conda env "audioSono" (Windows, Python 3.x).
+# Versões não fixadas. Para registrar as versões exatas do ambiente que
+# gerou os resultados, rode no env ativo:
+#     pip freeze > requirements-lock.txt
+# e versione esse arquivo também.
+#
+# Dependência externa (não instalável via pip): ffmpeg no PATH
+# (o pydub usa o ffmpeg para decodificar .m4a). Ver README.md.
+
+numpy
+pandas
+scipy
+scikit-learn
+xgboost
+tensorflow
+tensorflow-hub
+librosa
+pydub
+soundfile
+sounddevice     # só para os scripts que tocam áudio (reviewAndEmbed2, reviewErrors)
+matplotlib      # usa backend TkAgg nos scripts de revisão

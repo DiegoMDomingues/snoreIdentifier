@@ -1,0 +1,18 @@
+Snore Detection - dados (Biologix) — ACESSO RESTRITO, dados de pacientes (LGPD)
+
+O código está no repositório Git: https://github.com/<org>/<repo>
+Leia o README.md de lá, seção "Como montar o ambiente do zero".
+
+Conteúdo desta pasta:
+  M4A_audios.zip        -> extrair em  snore2026\M4A_audios\<codigo_paciente>\*.m4a
+  rotulos\              -> backups datados de M4A_classification (use o MAIS RECENTE)
+                           extrair em  snore2026\M4A_classification\
+  frames\               -> M4A_classification_v5_frames (opcional; regenerável
+                           com extractFrameEmbeddings.py)
+                           extrair em  snore2026\M4A_classification_v5_frames\
+
+Regras:
+  - Nunca sobrescreva nem apague um zip de rótulos; suba um novo com a data.
+  - Não copie estes dados para repositórios Git, e-mail ou drives pessoais.
+  - Não abra/salve os CSVs no Excel (corrompe os decimais).
+Responsável: Diego Domingues

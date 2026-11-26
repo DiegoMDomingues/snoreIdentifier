@@ -1,0 +1,34 @@
+# ===== Dados de pacientes (LGPD) — NUNCA versionar =====
+# Os dados ficam no Google Drive da Biologix. Ver README.md, seção "Dados".
+*.m4a
+*.wav
+*.mp3
+*.aac
+*.opus
+*.npz
+*.npy
+*.csv
+*_done.txt
+*.zip
+
+# Pastas de dados/saída (caso alguém as coloque dentro do repositório)
+M4A_audios/
+M4A_classification*/
+outputClassification*/
+ESC-50/
+reviewedFiles/
+
+# Modelos treinados (podem ser regenerados; se precisar guardar, use o Drive)
+*.pkl
+*.joblib
+*.h5
+*.keras
+*.tflite
+
+# Python / IDE
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.env
