@@ -32,3 +32,8 @@ __pycache__/
 .idea/
 .vscode/
 .env
+
+# Experimentos: cache tem dados de paciente; holdout/FINAL têm códigos de paciente
+experiments/_cache/
+experiments/holdout.json
+experiments/FINAL_*.json

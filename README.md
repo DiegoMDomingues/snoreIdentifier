@@ -55,7 +55,7 @@ Link da pasta: **`<COLE AQUI O LINK>`** (pedir acesso a Diego Domingues).
    ```
 2. **Criar o ambiente** (Anaconda Prompt)
    ```
-   conda create -n audioSono python=3.10
+   conda create -n audioSono python=3.11
    conda activate audioSono
    pip install -r requirements.txt
    conda install -c conda-forge ffmpeg
@@ -146,3 +146,24 @@ Ao terminar uma sessão de rotulagem relevante:
   (bug conhecido; ver handoff).
 - `reviewErrors.py` ainda aponta para `test_predictions_logreg.csv`;
   troque para `test_predictions_v6.csv` para revisar os erros do modelo atual.
+
+---
+
+## 7. Experimentos autônomos (Claude Code)
+
+`runExperiment.py` roda uma configuração JSON em validação cruzada por paciente
+**só nos pacientes de desenvolvimento**; os pacientes de `experiments/holdout.json`
+ficam trancados para um único teste final. Protocolo completo (regras, métrica,
+critério de parada, backlog): **`CLAUDE.md`**.
+
+```
+python runExperiment.py experiments/configs/exp_000_baseline.json          # um experimento
+python runExperiment.py experiments/configs/exp_000_baseline.json --repeats 3
+python runExperiment.py --compare exp_000_baseline_r3 exp_007_r3            # comparação pareada
+python runExperiment.py --leaderboard
+python runExperiment.py experiments/configs/<melhor>.json --final --i-am-diego   # holdout, 1 vez
+```
+
+- `experiments/holdout.json` tem códigos de paciente: fica fora do Git (backup no Drive junto dos rótulos).
+- Os números do harness **não** são comparáveis com os do `trainNN_main.py`
+  (o harness exclui o holdout do CV).
